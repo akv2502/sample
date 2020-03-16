@@ -1,0 +1,25 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: Koop
+  kafka:
+    consumer:
+      group-id: tpd-loggers
+      auto-offset-reset: latest
+    # change this property if you are using your own
+    # Kafka cluster or your Docker IP is different
+    bootstrap-servers: localhost:9092
+
+app:
+  message: This is the primary Application Property for ${spring.application.name}
+  
+api:
+  name: /koop/api/v1 
+
+
+
+
+koop:
+  topic-name: checkout
+  messages-per-request: 10
